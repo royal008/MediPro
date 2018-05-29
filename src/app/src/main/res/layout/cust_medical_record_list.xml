@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_text"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/very_small_text"
+            android:background="@drawable/off_white_curved_rectangle">
+            <TextView
+                android:id="@+id/tv_date_mr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_month_mr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nov"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/dark_gray"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/medium_text"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Records added by you"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/small_text"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record for user"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/small_text"
+                android:layout_marginTop="@dimen/mini_text"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipsis_red"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+</LinearLayout>

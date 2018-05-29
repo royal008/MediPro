@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/smaller_text"
+        android:paddingRight="@dimen/smaller_text"
+        android:paddingLeft="@dimen/smaller_text"
+        android:paddingBottom="@dimen/very_small_text"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/smaller_text">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_medicine"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textSize="@dimen/medium_text"
+            android:textColor="@color/dark_gray"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/very_small_text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/very_small_text">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹349.0"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/smaller_text"
+                    android:background="@drawable/horizontal_line"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%15.0 OFF"
+                    android:layout_marginLeft="@dimen/small_text"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/smaller_text"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="₹297.0"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/dark_gray"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/very_small_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD TO CART"
+                android:textSize="@dimen/smaller_text"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:padding="@dimen/mini_text"
+                android:background="@drawable/blue_curved_rectangle"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

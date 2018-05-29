@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="@dimen/mini_text"
+        android:layout_marginRight="@dimen/mini_text"
+        android:layout_marginBottom="@dimen/mini_text">
+        <ImageView
+            android:id="@+id/iv_specialist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/myfavoritedoctors"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tv_specialist"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="My Favorite Doctors"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/small_text"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/small_text"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_arrow"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</LinearLayout>

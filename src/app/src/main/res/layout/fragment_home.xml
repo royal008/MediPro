@@ -1,0 +1,497 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.medipro.Fragment.HomeFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_upload_prescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/general_uploadprescription"
+            android:layout_marginLeft="@dimen/smaller_text"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/very_small_text">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order with prescription"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:textSize="@dimen/medium_text"
+                android:layout_gravity="left"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Buy Upto 20% Discount!"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/smaller_text"
+                android:layout_gravity="left"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_curved_rectangle"
+            android:text="UPLOAD"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginRight="@dimen/very_small_text"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mainmenu"
+            android:scaleType="fitXY"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/very_small_text"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_shape_gray"
+                android:paddingLeft="@dimen/very_small_text"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_shape_red"
+                android:paddingLeft="@dimen/very_small_text"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_shape_gray"
+                android:paddingLeft="@dimen/very_small_text"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_shape_gray"
+                android:paddingLeft="@dimen/very_small_text"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_shape_gray"
+                android:paddingLeft="@dimen/very_small_text"/>
+        </LinearLayout>
+    </FrameLayout>
+
+<HorizontalScrollView
+    android:layout_marginLeft="@dimen/small_text"
+    android:layout_marginTop="@dimen/small_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:id="@+id/ll_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/ll_order_medicines"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_order_medicines"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/order_medicines" />
+
+        <TextView
+            android:id="@+id/tv_order_medicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_medicines"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_book_test"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_book_test"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_height="@dimen/image_height"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/book_test" />
+
+        <TextView
+            android:id="@+id/tv_book_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/book_test"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_shopping"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/shopping" />
+
+        <TextView
+            android:id="@+id/tv_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shopping"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_ayush"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_ayush"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/ayush" />
+
+        <TextView
+            android:id="@+id/ayush"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayush"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_insurance"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/insurance" />
+
+        <TextView
+            android:id="@+id/tv_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/insurance"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_health_center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_health_center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/health_centers" />
+
+        <TextView
+            android:id="@+id/tv_health_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/health_center"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_health_bank"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/very_small_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/iv_health_bank"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/medium_text"
+            android:paddingRight="@dimen/medium_text"
+            android:paddingTop="@dimen/very_small_text"
+            android:src="@drawable/health_bank" />
+
+        <TextView
+            android:id="@+id/tv_health_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/health_bank"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/smaller_text"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:paddingBottom="@dimen/padding_bottom"
+            android:background="@color/white"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
+</HorizontalScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/ll_book_appointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/upload_background_color"
+        android:layout_marginLeft="@dimen/small_text"
+        android:layout_marginRight="@dimen/small_text"
+        android:layout_marginTop="@dimen/small_text">
+        <ImageView
+            android:id="@+id/iv_book_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/general_bookappontment"
+            android:padding="@dimen/large_text"/>
+        <TextView
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book an Appointment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/medium_text"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/small_text"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find doctors click, hospital etc..."
+                android:textColor="@color/white"
+                android:textSize="@dimen/smaller_text"
+                android:layout_marginLeft="@dimen/small_text"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/small_text"
+        android:layout_marginRight="@dimen/small_text">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Popular Products"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/medium_text"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_view_all_product"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/mini_text"
+            android:paddingBottom="@dimen/mini_text"
+            android:text="View All"
+            android:textColor="@color/red"
+            android:textSize="@dimen/medium_text"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <com.medipro.Common.ExpandableGridView
+        android:id="@+id/gv_popular_products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/small_text"
+        android:layout_marginRight="@dimen/small_text"
+        android:layout_marginBottom="@dimen/small_text"
+        android:numColumns="4">
+    </com.medipro.Common.ExpandableGridView>
+
+</LinearLayout>
+</ScrollView>

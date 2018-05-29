@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/smaller_text"
+        android:paddingRight="@dimen/smaller_text"
+        android:paddingLeft="@dimen/smaller_text"
+        android:paddingBottom="@dimen/very_small_text"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/smaller_text">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_medicine"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Center Name"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/dark_gray"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/very_small_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/small_text"
+                android:layout_marginLeft="@dimen/very_small_text"
+                android:layout_marginTop="@dimen/mini_text"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="open today 07 am - 08 pm"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/gray"
+                android:layout_marginTop="@dimen/mini_text"
+                android:layout_marginLeft="@dimen/very_small_text"/>
+
+        </LinearLayout>
+      </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/very_small_text">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:text="1.62 km"
+            android:textColor="@color/red"
+            android:textSize="@dimen/medium_text"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/small_text"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="BOOK"
+            android:textSize="@dimen/small_text"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingLeft="@dimen/large_text"
+            android:paddingRight="@dimen/large_text"
+            android:paddingTop="@dimen/mini_text"
+            android:paddingBottom="@dimen/mini_text"
+            android:layout_marginTop="@dimen/mini_text"
+            android:background="@drawable/blue_curved_rectangle"/>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
