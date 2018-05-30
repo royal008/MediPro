@@ -37,8 +37,10 @@ public class MedicalRecordsFragment extends Fragment {
 
         alDate.add("15");
         alDate.add("24");
+        alDate.add("08");
 
         alMonth.add("NOV");
+        alMonth.add("AUG");
         alMonth.add("AUG");
 
         medicalRecordsAdapter=new MedicalRecordsAdapter(getActivity(),alDate,alMonth);

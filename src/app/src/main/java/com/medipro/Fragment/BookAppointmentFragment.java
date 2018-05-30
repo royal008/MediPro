@@ -26,10 +26,10 @@ public class BookAppointmentFragment extends Fragment {
     View view;
     ListView lvFindDoctors;
     FindDoctorsAdapter findDoctorsAdapter;
-    int specialistImgs[]={R.drawable.myfavoritedoctors,R.drawable.ayurvedic_specialist,R.drawable.cardiologist,
-    R.drawable.chestspecialists,R.drawable.cosmeticsurgeons,R.drawable.dentists,R.drawable.dermatologists,R.drawable.diabetologists};
-    String specialistNames[]={"My Favorite Doctors","Ayurvedic Doctors","Cardiologist","Chest Specialists","Cosmetic Surgeons",
-            "Dentists", "Dermatologist","Diabetologists"};
+    int specialistImgs[]={R.drawable.myfavoritedoctors,R.drawable.ayurvedic_specialist,R.drawable.dermatologists,R.drawable.cardiologist,
+    R.drawable.chestspecialists,R.drawable.cosmeticsurgeons,R.drawable.dentists,R.drawable.diabetologists};
+    String specialistNames[]={"My Favorite Doctors","Opthalmologist","Dermatologists","Cardiologist","Gastroenterologists",
+            "Phychiartist", "Ear-Nose-Throat(ENT) Specialist","Gynaecologists"};
     FragmentBeanClass fbc;
     ImageView ivBack;
     @Override
@@ -66,7 +66,7 @@ public class BookAppointmentFragment extends Fragment {
         lvFindDoctors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position==2){
+                if(position==3){
                     fbc.setFragment(new CardiologistFragment());
                 }
             }

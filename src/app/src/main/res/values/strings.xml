@@ -7,6 +7,9 @@
     <string name="insurance">Insurance</string>
     <string name="health_center">Health Center</string>
     <string name="health_bank">Health Bank</string>
+    <string name="shopping_upload">UPLOAD</string>
+    <string name="shopping_discount">Quick Buy Upto 20% Discount!</string>
+    <string name="shopping_order">Order with prescription</string>
     <string name="terms">
         <font size="10">By continuing you agree</font>
         <font size="14">Terms &amp; Conditions</font>
@@ -19,4 +22,10 @@
         <font size="35">Find Doctors,</font>\n
         <font size="10">Clinic, hospitals, specialists</font>
     </string>
+    <string name="upload_continue">CONTINUE</string>
+    <string name="upload_preload">Preload</string>
+    <string name="upload_gallery">Gallery</string>
+    <string name="upload_camera">Camera</string>
+    <string name="medical_records">MEDICAL RECORDS</string>
+    <string name="add_record">ADD A RECORD</string>
 </resources>

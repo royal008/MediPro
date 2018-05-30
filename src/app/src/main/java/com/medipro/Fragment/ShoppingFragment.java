@@ -33,7 +33,7 @@ public class ShoppingFragment extends Fragment {
     R.drawable.shopping_petcare,R.drawable.shopping_weightmanagement,R.drawable.shopping_firstaid,R.drawable.shopping_organic,
     R.drawable.shopping_eyecare};
     String shoppingCategories[]={"Surgical needs","Fitness Equipments","Food","Cosmetics","Eye and Ear Care","Mother Care","Oral Care",
-            "Baby Care","Woman Care","Skin Care","Hair Care","Pet Care","Weight Management","First Aid","Organic","Eye and Ear Care"};
+            "Baby Care","Woman Care","Skin Care","Hair Care","Pet Care","Weight Management","First Aid","Organic","Others"};
     MainGridViewAdapter mainGridViewAdapter;
     FragmentBeanClass fbc;
     LinearLayout llUploadPrescription;
