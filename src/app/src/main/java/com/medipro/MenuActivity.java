@@ -20,9 +20,9 @@ public class MenuActivity extends AppCompatActivity {
     ListView lvMenuList;
     View main_content;
     MenuListAdapter menuListAdapter;
-    String menuList[]={"My Orders","My Appointments","Offers","Reminder","Profile update","Invite to Earn","Rate Us","Contact Us","Log Out"};
+    String menuList[]={"My Orders","My Appointments","Offers","Reminder","Profile update","Invite to Earn","Contact Us","Log Out"};
     int menuImages[]={R.drawable.myorders_menu,R.drawable.myappointments_menu,R.drawable.offers,R.drawable.notifications_menu,
-            R.drawable.profile_menu,R.drawable.invitetoearn_menu,R.drawable.rateus_menu,R.drawable.contactus_menu,R.drawable.logout_menu};
+            R.drawable.profile_menu,R.drawable.invitetoearn_menu,R.drawable.contactus_menu,R.drawable.logout_menu};
     public static ImageView ivMenuLines,ivDownArrow,ivSearch,ivCart;
     public static LinearLayout llMenu,llTopBar;
     public static TextView tvPlaceName,tvCityName;

@@ -31,12 +31,12 @@ public class ShoppingFragment extends Fragment {
     R.drawable.shopping_cosmetics,R.drawable.shopping_eyecare,R.drawable.shopping_mothercare,R.drawable.shopping_oralcare,
     R.drawable.shopping_babycare,R.drawable.shopping_womencare,R.drawable.shopping_skincare,R.drawable.shopping_haircare,
     R.drawable.shopping_petcare,R.drawable.shopping_weightmanagement,R.drawable.shopping_firstaid,R.drawable.shopping_organic,
-    R.drawable.shopping_eyecare};
+   };
     String shoppingCategories[]={"Surgical needs","Fitness Equipments","Food","Cosmetics","Eye and Ear Care","Mother Care","Oral Care",
-            "Baby Care","Woman Care","Skin Care","Hair Care","Pet Care","Weight Management","First Aid","Organic","Others"};
+            "Baby Care","Woman Care","Skin Care","Hair Care","Pet Care","Weight Management","First Aid","Organic"};
     MainGridViewAdapter mainGridViewAdapter;
     FragmentBeanClass fbc;
-    LinearLayout llUploadPrescription;
+   // LinearLayout llUploadPrescription;
     ImageView ivBack;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +55,7 @@ public class ShoppingFragment extends Fragment {
 //        MenuActivity.ivSearch.setVisibility(View.VISIBLE);
 //        MenuActivity.ivCart.setVisibility(View.VISIBLE);
 
-        llUploadPrescription=(LinearLayout)view.findViewById(R.id.ll_upload_prescription);
+       // llUploadPrescription=(LinearLayout)view.findViewById(R.id.ll_upload_prescription);
         ivBack=(ImageView)view.findViewById(R.id.iv_back);
         fbc=new FragmentBeanClass((AppCompatActivity) getActivity(),R.id.fl_container_main);
         mainGridViewAdapter=new MainGridViewAdapter(getActivity(),shoppingImages,shoppingCategories,"shopping");
@@ -66,12 +66,12 @@ public class ShoppingFragment extends Fragment {
     }
 
     private void onClick() {
-        llUploadPrescription.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fbc.setFragment(new UploadPrescription());
-            }
-        });
+//        llUploadPrescription.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                fbc.setFragment(new UploadPrescription());
+//            }
+//        });
         gvShopping.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

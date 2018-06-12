@@ -28,4 +28,6 @@
     <string name="upload_camera">Camera</string>
     <string name="medical_records">MEDICAL RECORDS</string>
     <string name="add_record">ADD A RECORD</string>
+    <string name="submit">SUBMIT</string>
+    <string name="medical_details">Medicine Details</string>
 </resources>
