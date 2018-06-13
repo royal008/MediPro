@@ -75,7 +75,9 @@ public class UploadPrescription extends Fragment implements View.OnClickListener
     private static final int CAMERA_REQUEST = 1888;
     private static final int GALLERY_REQUEST = 100;
     ArrayList<Bitmap> uploadArrary;
+   // ArrayList<Integer> closeBtnArray;
     Bitmap image;
+  //  int closeBtn;
  //  private Uri mCapturedImageURI;
 //    private ArrayList<MyImage> images;
 
@@ -104,6 +106,7 @@ public class UploadPrescription extends Fragment implements View.OnClickListener
 
        // uploadArrary = new ArrayList<Bitmap>();
         uploadArrary = new ArrayList();
+       // closeBtnArray = new ArrayList<>();
      //   uploadedDocumentsAdapter = new UploadedDocumentsAdapter(getActivity(),uploadArrary);
         gvUploadedDocuments = (GridView) view.findViewById(R.id.gv_uploaded_documents);
      //   gvUploadedDocuments.setAdapter(uploadedDocumentsAdapter);
@@ -169,12 +172,16 @@ public class UploadPrescription extends Fragment implements View.OnClickListener
             String picturePath = cursor.getString(columnIndex);
             image = BitmapFactory.decodeFile(String.valueOf(picturePath));
             uploadArrary.add(image);
+//            closeBtn=R.drawable.closewithcircle;
+//            closeBtnArray.add(closeBtn);
             Log.e("gallery","image added");
                 }
 
-        else if (requestCode == CAMERA_REQUEST) {
+        else if (requestCode == CAMERA_REQUEST ) {
             image = (Bitmap) data.getExtras().get("data");
            uploadArrary.add(image);
+//            closeBtn=R.drawable.closewithcircle;
+//            closeBtnArray.add(closeBtn);
             Log.e("camera","image added");
         }
         uploadedDocumentsAdapter = new UploadedDocumentsAdapter(getActivity(),uploadArrary);

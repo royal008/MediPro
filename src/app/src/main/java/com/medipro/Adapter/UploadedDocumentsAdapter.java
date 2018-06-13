@@ -26,10 +26,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.medipro.R.drawable.closewithcircle;
+import static com.medipro.R.drawable.edit;
+
 
 public class UploadedDocumentsAdapter extends BaseAdapter {
     Context context;
     ArrayList<Bitmap> images;
+   // ArrayList<Integer> closeBtnImage;
     String from;
 
 
@@ -44,6 +48,7 @@ public class UploadedDocumentsAdapter extends BaseAdapter {
     public UploadedDocumentsAdapter(Context c, ArrayList images) {
         context = c;
         this.images= images;
+       // this.closeBtnImage=closeBtnImage;
 
 
     }
@@ -70,7 +75,8 @@ public class UploadedDocumentsAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        ImageView images,close;
+        ImageView images,closeBtn,editbtn;
+        FrameLayout frameLayout;
     }
 
     @Override
@@ -82,7 +88,9 @@ public class UploadedDocumentsAdapter extends BaseAdapter {
 
             view = LayoutInflater.from(context).inflate(R.layout.cust_grid_upload_prescription, null);
             viewHolder.images = (ImageView) view.findViewById(R.id.iv_img_container);
-            viewHolder.close=(ImageView)view.findViewById(R.id.iv_close);
+            viewHolder.closeBtn=(ImageView)view.findViewById(R.id.iv_close);
+            viewHolder.editbtn=(ImageView)view.findViewById(R.id.iv_edit);
+            viewHolder.frameLayout=(FrameLayout)view.findViewById(R.id.fl_container_main);
 //            if (from.equals("gallery")) {
 //                viewHolder.images.setImageBitmap(BitmapFactory.decodeFile(String.valueOf(picturePath.get(0))));
 //                Log.e("tag", "picturepath" + picturePath);
@@ -92,14 +100,18 @@ public class UploadedDocumentsAdapter extends BaseAdapter {
 //                Log.e("tag", "picturepath" + picturePath);
 //            }
            viewHolder.images.setImageBitmap(images.get(position));
+           viewHolder.closeBtn.setImageResource(closewithcircle);
+           viewHolder.editbtn.setImageResource(edit);
 
 
-            viewHolder.close.setOnClickListener(new View.OnClickListener() {
+           viewHolder.closeBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-          //         FrameLayout frameLayout = (FrameLayout) v.findViewById(R.id.fl_container_main);
-//                    frameLayout.removeAllViews();
-                    Toast.makeText(context,"item clicked",Toast.LENGTH_LONG);
+                    Log.e("tag","item clicked");
+                  //FrameLayout frameLayout = (FrameLayout) v.findViewById(R.id.fl_container_main);
+                    viewHolder.frameLayout.removeAllViews();
+//                    Log.e("tag","item delete");
+//                    Toast.makeText(context,"item clicked",Toast.LENGTH_LONG);
                 }
             });
 
