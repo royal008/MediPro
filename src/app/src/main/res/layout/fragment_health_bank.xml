@@ -54,6 +54,7 @@
         android:weightSum="3"
         android:layout_marginTop="@dimen/small_text">
     <ImageView
+        android:id="@+id/iv_stem_cell"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -63,6 +64,7 @@
         android:layout_marginRight="@dimen/small_text"
         android:layout_marginBottom="@dimen/smaller_text"/>
     <ImageView
+        android:id="@+id/iv_blood_bank"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

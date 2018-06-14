@@ -12,6 +12,14 @@
     <string name="ask_me">Ask Me Anything</string>
     <string name="shopping_discount">Quick Buy Upto 20% Discount!</string>
     <string name="shopping_order">Order with prescription</string>
+    <string name="homeopathy">HOMEOPATHY</string>
+    <string name="ayurvedic">AYURVEDIC</string>
+    <string name="siddha">SIDDHA</string>
+    <string name="yoga">YOGA</string>
+    <string name="gym">GYM</string>
+    <string name="spa">SPA</string>
+    <string name="blood_bank">BLOOD BANK</string>
+    <string name="stem_cell">STEM CELL</string>
     <string name="terms">
         <font size="10">By continuing you agree</font>
         <font size="14">Terms &amp; Conditions</font>

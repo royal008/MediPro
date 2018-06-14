@@ -4,21 +4,24 @@ package com.medipro.Fragment;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.medipro.Common.FragmentBeanClass;
 import com.medipro.MenuActivity;
 import com.medipro.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InsuranceFragment extends Fragment {
+public class InsuranceFragment extends Fragment implements View.OnClickListener {
     View view;
-    ImageView ivBack;
+    ImageView ivBack,ivInsurance1,ivInsurance2,ivInsurance3;
+    FragmentBeanClass fbc;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,18 +40,43 @@ public class InsuranceFragment extends Fragment {
 //        MenuActivity.ivCart.setVisibility(View.GONE);
 
         ivBack=(ImageView)view.findViewById(R.id.iv_back);
+        ivInsurance1=(ImageView)view.findViewById(R.id.iv_health_insurance1);
+        ivInsurance2=(ImageView)view.findViewById(R.id.iv_health_insurance2);
+        ivInsurance3=(ImageView)view.findViewById(R.id.iv_health_insurance3);
+        fbc=new FragmentBeanClass((AppCompatActivity) getActivity(),R.id.fl_container_main);
 
         onClick();
 
         return view;
     }
     private void onClick() {
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getFragmentManager().popBackStack();
-            }
-        });
+        ivBack.setOnClickListener(this);
+        ivInsurance1.setOnClickListener(this);
+        ivInsurance2.setOnClickListener(this);
+        ivInsurance3.setOnClickListener(this);
+//        ivBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getFragmentManager().popBackStack();
+//            }
+//        });
     }
 
+    @Override
+    public void onClick(View v) {
+     switch (v.getId()) {
+         case R.id.iv_back:
+             getFragmentManager().popBackStack();
+             break;
+         case R.id.iv_health_insurance1:
+             fbc.setFragment(new HealthInsuranceFragment1());
+             break;
+         case R.id.iv_health_insurance2:
+             fbc.setFragment(new HealthInsuranceFragment2());
+             break;
+         case R.id.iv_health_insurance3:
+             fbc.setFragment(new HealthInsuranceFragment3());
+             break;
+     }
+    }
 }
