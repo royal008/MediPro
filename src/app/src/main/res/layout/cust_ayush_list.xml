@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:orientation="horizontal"
         android:padding="@dimen/very_small_text"
         android:layout_gravity="center"

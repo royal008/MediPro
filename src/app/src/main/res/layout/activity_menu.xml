@@ -131,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@null"
+            android:layout_marginTop="@dimen/very_small_text"
             android:scrollbars="none">
 
         </ListView>

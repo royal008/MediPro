@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:layout_marginTop="@dimen/medium_text">
+  >
     <ImageView
         android:id="@+id/iv_menu"
         android:layout_width="wrap_content"
@@ -11,16 +11,18 @@
         android:src="@drawable/contactus_menu"
         android:layout_gravity="center"
         android:layout_marginLeft="@dimen/xlarge_text"
-        android:paddingTop="@dimen/xlarge_text"/>
+        android:layout_marginBottom="@dimen/very_small_text"
+        android:paddingTop="@dimen/medium_text"/>
     <TextView
         android:id="@+id/tv_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Orders"
+        android:layout_marginBottom="@dimen/very_small_text"
         android:textColor="@color/dark_gray"
         android:layout_gravity="center"
         android:textSize="@dimen/medium_text"
         android:textStyle="bold"
         android:layout_marginLeft="@dimen/xlarge_text"
-        android:paddingTop="@dimen/xlarge_text"/>
+        android:paddingTop="@dimen/medium_text"/>
 </LinearLayout>

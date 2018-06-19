@@ -2,12 +2,17 @@ package com.medipro.Fragment;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,12 +20,17 @@ import android.widget.TextView;
 
 import com.medipro.Adapter.MainGridViewAdapter;
 import com.medipro.Adapter.PopularProductAdapter;
+import com.medipro.Adapter.SlidingImage_Adapter;
 import com.medipro.Common.ExpandableGridView;
 import com.medipro.Common.FragmentBeanClass;
+import com.medipro.ImageModel;
 import com.medipro.MenuActivity;
 import com.medipro.R;
+import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,8 +40,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     FragmentBeanClass fbc;
     LinearLayout llUploadPrescription,llBookAppointment,llMenu,llOrderMedicines,llBookTest,llShopping,llAyush,llInsurance,llHealthCenter,llHealthBank;
     ExpandableGridView gvPopularProducts;
-
-
+    private static ViewPager mPager;
+    private static int currentPage = 0;
+    private static int NUM_PAGES = 0;
+    private ArrayList<ImageModel> imageModelArrayList;
+    CirclePageIndicator indicator;
+    int[] myImageList = {R.drawable.mainmenu,R.drawable.gym,R.drawable.map,R.drawable.spa,R.drawable.yoga};
 
     PopularProductAdapter popularProductAdapter;
     ArrayList alPopProductImage,alPopProductName,alPopProductOldPrice,alPopProductDiscount,alPopProductNewPrice;
@@ -65,7 +79,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         llHealthCenter=(LinearLayout)view.findViewById(R.id.ll_health_center);
         llHealthBank=(LinearLayout)view.findViewById(R.id.ll_health_bank);
 
-
+        mPager = (ViewPager)view.findViewById(R.id.pager);
+        indicator = (CirclePageIndicator)view.findViewById(R.id.indicator);
 
 
         alPopProductImage=new ArrayList();
@@ -73,6 +88,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         alPopProductOldPrice=new ArrayList();
         alPopProductDiscount=new ArrayList();
         alPopProductNewPrice=new ArrayList();
+        imageModelArrayList = new ArrayList<>();
+        imageModelArrayList = populateList();
+
         fbc=new FragmentBeanClass((AppCompatActivity) getActivity(),R.id.fl_container_main);
 
         for(int i=0;i<4;i++){
@@ -87,10 +105,81 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         gvPopularProducts.setAdapter(popularProductAdapter);
         gvPopularProducts.setExpanded(true);
 
+        init();
         onClick();
-
         return view;
     }
+    private ArrayList<ImageModel> populateList(){
+
+        ArrayList<ImageModel> list = new ArrayList<>();
+
+        for(int i = 0; i < 5; i++){
+            ImageModel imageModel = new ImageModel();
+            imageModel.setImage_drawable(myImageList[i]);
+            list.add(imageModel);
+        }
+
+        return list;
+    }
+
+    private void init() {
+
+       // mPager = (ViewPager) findViewById(R.id.pager);
+        mPager.setAdapter(new SlidingImage_Adapter(getActivity(),imageModelArrayList));
+
+       // CirclePageIndicator indicator = (CirclePageIndicator)findViewById(R.id.indicator);
+
+        indicator.setViewPager(mPager);
+
+        final float density = getResources().getDisplayMetrics().density;
+
+//Set circle indicator radius
+        indicator.setRadius(5 * density);
+
+        NUM_PAGES =imageModelArrayList.size();
+
+        // Auto start of viewpager
+        final Handler handler = new Handler();
+        final Runnable Update = new Runnable() {
+            public void run() {
+                if (currentPage == NUM_PAGES) {
+                    currentPage = 0;
+                }
+                mPager.setCurrentItem(currentPage++, true);
+            }
+        };
+        Timer swipeTimer = new Timer();
+        swipeTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(Update);
+            }
+        }, 3000, 3000);
+
+        // Pager listener over indicator
+        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                currentPage = position;
+
+            }
+
+            @Override
+            public void onPageScrolled(int pos, float arg1, int arg2) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int pos) {
+
+            }
+        });
+
+    }
+
+
+
 
 
 
@@ -104,96 +193,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         llHealthCenter.setOnClickListener(this);
         llHealthBank.setOnClickListener(this);
         llUploadPrescription.setOnClickListener(this);
-//        llUploadPrescription.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
 //
-//            }
-//        });
-
-//        llOrderMedicines.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new OrderMedicinesFragment());
-//            }
-//        });
-//        llBookTest.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new BookTestFragment());
-//            }
-//        });
-//        llShopping.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new ShoppingFragment());
-//            }
-//        });
-
-//        llAyush.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new AyushFragment());
-//            }
-//        });
-//        llInsurance.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new InsuranceFragment());
-//            }
-//        });
-//        llHealthCenter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new HealthCentersFragment());
-//            }
-//        });
-//        llHealthBank.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fbc.setFragment(new HealthBankFragment());
-//            }
-//        });
-
-//        gvMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if(position==0){
-//                    fbc.setFragment(new OrderMedicinesFragment());
-//                }
-//                if(position==1){
-//                    fbc.setFragment(new BookTestFragment());
-//                }
-//                if(position==2){
-//                    fbc.setFragment(new ShoppingFragment());
-//                }
-//                if(position==3) {
-//                    if (moreMenu) {
-//                        fbc.setFragment(new AyushFragment());
-//                    }else{
-//                        mainGridViewAdapter=new MainGridViewAdapter(getActivity(),menuImagesMore,menuNameMore,"menu");
-//                        gvMenu.setAdapter(mainGridViewAdapter);
-//                        gvMenu.setExpanded(true);
-//                        moreMenu=true;
-//                    }
-//                }
-//                if(position==4){
-//                    fbc.setFragment(new InsuranceFragment());
-//                }
-//                if(position==5){
-//                    fbc.setFragment(new HealthCentersFragment());
-//                }
-//                if(position==6){
-//                    fbc.setFragment(new HealthBankFragment());
-//                }
-//                if(position==7){
-//                    mainGridViewAdapter=new MainGridViewAdapter(getActivity(),menuImagesLess,menuNameLess,"menu");
-//                    gvMenu.setAdapter(mainGridViewAdapter);
-//                    gvMenu.setExpanded(true);
-//                    moreMenu=false;
-//                }
-//            }
-//        });
 
         llBookAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,4 +258,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     }
+
+
 }
