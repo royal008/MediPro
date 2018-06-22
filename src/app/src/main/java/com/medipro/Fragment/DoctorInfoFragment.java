@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
@@ -17,49 +16,48 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.medipro.MenuActivity;
 import com.medipro.R;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DoctorDetailsFragment extends Fragment implements OnMapReadyCallback, View.OnClickListener {
+public class DoctorInfoFragment extends Fragment implements View.OnClickListener,OnMapReadyCallback {
     View view;
     ImageView ivBack,ivShare;
-   // TextView tvCallDoctor;
+     TextView tvCallDoctor;
+    //LatLng dip = new LatLng(12.555, 77.45);
     LatLng dip = new LatLng(12.555, 77.45);
     GoogleMap myMap;
     MapView mMapView;
+
+    public DoctorInfoFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_doctor_details, container, false);
-        MenuActivity.llTopBar.setVisibility(View.GONE);
+        view= inflater.inflate(R.layout.fragment_doctor_info, container, false);
         mMapView=(MapView)view.findViewById(R.id.map);
         ivBack=(ImageView)view.findViewById(R.id.iv_back);
         ivShare=(ImageView)view.findViewById(R.id.iv_share);
-       // tvCallDoctor=(TextView)view.findViewById(R.id.tv_call_doctor);
+       // ivCallDoctor=(ImageView)view.findViewById(R.id.iv_);
+         tvCallDoctor=(TextView)view.findViewById(R.id.tv_call_doctor);
         try {
-           // rootView = inflater.inflate(R.layout.fragment, container, false);
+            // rootView = inflater.inflate(R.layout.fragment, container, false);
             MapsInitializer.initialize(this.getActivity());
-          //  mMapView = (MapView)View.findViewById(R.id.map);
+            //  mMapView = (MapView)View.findViewById(R.id.map);
             mMapView.onCreate(savedInstanceState);
             mMapView.getMapAsync(this);
         }
@@ -116,8 +114,9 @@ public class DoctorDetailsFragment extends Fragment implements OnMapReadyCallbac
     }
     private void onClick() {
         ivBack.setOnClickListener(this);
+        tvCallDoctor.setOnClickListener(this);
         ivShare.setOnClickListener(this);
-       // tvCallDoctor.setOnClickListener(this);
+        // tvCallDoctor.setOnClickListener(this);
 //        ivBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -135,6 +134,15 @@ public class DoctorDetailsFragment extends Fragment implements OnMapReadyCallbac
             case R.id.iv_back:
                 getFragmentManager().popBackStack();
                 break;
+            case R.id.tv_call_doctor:
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:0377778888"));
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+                    return;
+                }
+                getActivity().startActivity(callIntent);
+                break;
             case R.id.iv_share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
@@ -146,7 +154,7 @@ public class DoctorDetailsFragment extends Fragment implements OnMapReadyCallbac
 
         }
 
-        }
-
     }
+
+}
 

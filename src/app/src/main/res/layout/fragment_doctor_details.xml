@@ -6,8 +6,9 @@
     tools:context="com.medipro.Fragment.DoctorDetailsFragment">
 
     <LinearLayout
+        android:layout_weight="0.8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:background="@color/red">
 
@@ -62,8 +63,9 @@
 
     </LinearLayout>
     <LinearLayout
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/doctordetails"
         android:orientation="horizontal">
     <ImageView
@@ -95,8 +97,21 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:layout_weight="6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:orientation="horizontal"
         android:background="@color/white"
         android:padding="@dimen/mini_text">
@@ -144,15 +159,17 @@
     </LinearLayout>
 
     <LinearLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_weight="10"
         android:orientation="vertical"
         android:layout_marginLeft="@dimen/smaller_text"
         android:layout_marginRight="@dimen/smaller_text"
         android:layout_marginTop="@dimen/smaller_text"
         android:padding="@dimen/mini_text">
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hospital Name"
@@ -173,60 +190,206 @@
             android:textColor="@color/dark_gray"
             android:textSize="@dimen/smaller_text"
             android:layout_marginTop="1dp"/>
-        <ImageView
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_marginTop="@dimen/smaller_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/map"
-            android:layout_marginTop="@dimen/mini_text"/>
+            android:layout_height="200dp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="@dimen/smaller_text"
-            android:layout_marginRight="@dimen/smaller_text"
-            android:layout_marginTop="@dimen/very_small_text"
-            android:padding="@dimen/mini_text">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visiting Timing"
-                android:textColor="@color/dark_gray"
-                android:textStyle="bold"
-                android:textSize="@dimen/small_text"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MON \t  06:30 am - 07.30 am"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/smaller_text"
-                android:layout_marginTop="3dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TUE \t  06:30 am - 07.30 am"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/smaller_text"
-                android:layout_marginTop="1dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="WED \t  06:30 am - 07.30 am"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/smaller_text"
-                android:layout_marginTop="1dp"/>
-        </LinearLayout>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="3"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_marginLeft="@dimen/smaller_text"
+              android:layout_marginRight="@dimen/smaller_text"
+              android:layout_marginTop="@dimen/very_small_text"
+              android:padding="@dimen/mini_text">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:text="Visiting Timing"
+                  android:textColor="@color/dark_gray"
+                  android:textStyle="bold"
+                  android:textSize="@dimen/small_text"/>
+              <LinearLayout
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="7">
 
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="MON "
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="TUE "
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="WED"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="THR"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="FRI"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="SAT"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      >
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.2"
+                          android:layout_height="wrap_content"
+                          android:text="SUN"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="0.8"
+                          android:layout_height="wrap_content"
+                          android:text="06:30 am - 07.30 am"
+                          android:textColor="@color/gray"
+                          android:textSize="@dimen/smaller_text"
+                          android:layout_marginTop="3dp"/>
+                  </LinearLayout>
+              </LinearLayout>
+          </LinearLayout>
+      </LinearLayout>
+  </ScrollView>
+    </LinearLayout>
+   <LinearLayout
+       android:layout_weight="0.8"
+       android:layout_width="match_parent"
+       android:layout_height="0dp">
     <TextView
+        android:id="@+id/tv_call_doctor"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.26"
+        android:layout_height="match_parent"
         android:text="BOOK APPOINTMENT"
         android:textColor="@color/white"
-        android:textSize="@dimen/small_text"
+        android:textSize="@dimen/medium_text"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"
         android:background="@color/upload_background_color" />
-
 </LinearLayout>
+</LinearLayout>
+
+
+

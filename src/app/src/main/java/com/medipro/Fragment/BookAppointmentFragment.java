@@ -66,8 +66,29 @@ public class BookAppointmentFragment extends Fragment {
         lvFindDoctors.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0){
+                    fbc.setFragment(new FavoriteDoctorsFragment());
+                }
+                if(position==1){
+                    fbc.setFragment(new OpthalmologistFragment());
+                }
+                if(position==2){
+                    fbc.setFragment(new DermatologistsFragment());
+                }
                 if(position==3){
                     fbc.setFragment(new CardiologistFragment());
+                }
+                if(position==4){
+                    fbc.setFragment(new GastroenterologistsFragment());
+                }
+                if(position==5){
+                    fbc.setFragment(new PhychiartistFragment());
+                }
+                if(position==6){
+                    fbc.setFragment(new ENTSpecialistFragment());
+                }
+                if(position==7){
+                    fbc.setFragment(new GynaecologistsFragment());
                 }
             }
         });
